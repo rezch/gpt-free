@@ -25,7 +25,10 @@ class Bot:
         return (result)
 
     def gptEchoCommand(message):
-        response = RequestEvent(message.text)
+        try:
+            response = RequestEvent(message.text)
+        except:
+            response =  'Извините, сервис gpt4 временно не доступен'
         return (response)
 
     def gptCommand(message):
